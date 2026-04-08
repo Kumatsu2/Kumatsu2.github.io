@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>С Днём Рождения, Даша!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Общие стили */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%); /* Нежный розово-фиолетовый градиент */
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 25px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            margin: 20px 0;
+            max-width: 700px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-family: 'Pacifico', cursive;
+            color: #8a2be2; /* Фиолетовый */
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.15);
+        }
+
+        .subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3em;
+            color: #6a5acd; /* Индиго */
+            margin-bottom: 40px;
+            line-height: 1.5;
+        }
+
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+            margin-bottom: 40px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 150px; 
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Кнопка */
+        .button {
+            display: inline-block;             background-color: #9370db; /* Средний фиолетовый */
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.1em;
+            font-weight: bold;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            text-decoration: none; /* Убираем подчеркивание, если ссылка */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .button:hover {
+            background-color: #8a2be2; /* Темнее фиолетовый */
+            transform: translateY(-3px);
+        }
+        
+        .button:active {
+            transform: translateY(0);
+        }
+
+        /* Стиль для шуток */
+        .joke-container {
+            background-color: #f8f0fe; /* Очень светлый фиолетовый */
+            border-left: 5px solid #8a2be2;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 10px;
+            text-align: center;
+            font-style: italic;
+            font-size: 1.1em;
+            color: #555;
+        }
+        
+        .joke-container p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>С Днём Рождения, Даша!</h1>
+        <p class="subtitle">Пусть этот день будет наполнен радостью, улыбками и самыми теплыми моментами!</p>
+
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="https://pikuco.ru/upload/test_stable/f49/f49975ee115d8e2c2571f46e5ef0f4d6.webp" alt="Милый щенок"></div>
+            <div class="gallery-item"><img src="https://n1s1.hsmedia.ru/be/90/34/be9034d762857e5ba510937ce31b14b9/728x728_1_666010ab55120072825c74de5a7e19b0@1000x1000_0x10fmyjvQ_7882540427738188474.jpg.webp" alt="Пушистый котенок"></div>
+            <div class="gallery-item"><img src="https://as1.ftcdn.net/jpg/02/41/21/40/1000_F_241214058_C1H6Pk9hVTlQzEBhEQYueRUjmLfwfoRh.jpg" alt="Тюлени"></div>
+            <div class="gallery-item"><img src="https://static.boredpanda.com/blog/wp-content/uploads/2025/06/funny-animal-antics-memes-pics-cover_675.jpg" alt="Черепаха (не собака)"></div>
+            <div class="gallery-item"><img src="https://w0.peakpx.com/wallpaper/832/996/HD-wallpaper-charming-collection-of-amusement-very-funny-animals-2014-2015-monkey-meme.jpg" alt="Макака Джексон"></div>
+            <div class="gallery-item"><img src="https://thumbs.dreamstime.com/b/hilarious-birthday-celebration-panoramic-collection-funny-animal-memes-showing-festive-companions-unleash-inner-lover-351221704.jpg" alt="Др животинки"></div>
+        </div>
+
+        <p class="subtitle">А теперь немного юмора!</p>
+        <div class="joke-container" id="jokeContainer">
+            <p id="jokeText">Загрузка шутки...</p>
+        </div>
+        <button class="button" onclick="showJoke()">Еще шутка!</button>
+
+        <div class="joke-container" style="margin-top: 40px;">
+            <h3>С любовью и наилучшими пожеланиями,</h3>
+            <p>Твои друзья!</p>
+        </div>
+    </div>
+
+    <script>
+        const jokes = [
+            "Почему программисты не любят природу? Слишком много багов!",
+            "В Чечню привезли шоу с крокодилами. Было ну очень страшно, но, переборов страх, крокодилы все-таки выступили.",
+            "Купил шапку-невидимку. Не могу найти",
+           
+            "Во время очередной корпоративной вечеринки в рамках конкурса «Лови крысу» был пойман и зверски избит бухгалтер компании.",
+            "Зачем птицы летают в теплые края? — Потому что идти пешком долго.",
+            "Какой сегодня праздник? Ну, если ты не Даша, то обычный день. Но если ты Даша... ТО ВЕСЬ МИР ВЕСЕЛИТСЯ!",
+            "Почему французы едят улиток? — Они не любят фастфуд!",
+            "Как назвать самую счастливую собаку? Даш-терьер!",
+            "Почему микроскопу нельзя верить? — Он все преувеличивает.",
+        ];
+
+        const jokeTextElement = document.getElementById('jokeText');
+        const jokeContainer = document.getElementById('jokeContainer');
+
+        
+        function showJoke() {
+            const randomIndex = Math.floor(Math.random() * jokes.length);
+            jokeTextElement.textContent = jokes[randomIndex];
+        }
+
+        
+        showJoke();
+    </script>
+</body>
+</html>
